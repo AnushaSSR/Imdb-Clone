@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(238, 227, 17);
+
+}
+#movie-details-container {
+
+    display: flex;
+    background-color:rgba(20, 18, 25, 0.8);
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.movie-details {
+    width:100%;
+    display: inline-flex;
+    margin:50px;
+}
+
+.movie-data{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+
+}
+
+.movie-plot ,.movie-title{
+    margin: 0% 0% 0% 5%;
+}
+
+#fav{
+    background-color: red;
+}

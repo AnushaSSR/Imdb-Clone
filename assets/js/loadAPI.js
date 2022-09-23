@@ -1,99 +1,131 @@
+
+var favoritemovie = "Shrek";
+sessionStorage.setItem("favoriteMovie", favoritemovie);
+
+
+
+let apikey = "677792fa";
+let searchString = " ";
+
 function searchResults(searchString) {
 
-
-    console.log(`-------------------searchString:`, searchString);
-    fetch(`http://www.omdbapi.com/?apikey=677792fa&s=${searchString}`)
+    fetch(`http://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
-            let results = "";
-            // let searchName = "";
-            var stringfiedData= JSON.stringify(data);
-            // console.log(`stringified data is`,Search.Title);
 
-            var val=0;
+            console.log(data);
+
+            var searchList = document.getElementById('search-list');
+
+            searchList.innerHTML = " ";
 
             if (data.Search) {
-                var searchList =document.getElementById('search-list');
-                
+
                 data.Search.forEach(searchResult => {
-                    //     console.log(`${searchResult.Title}`);
-                    const wrap = searchResult.Title;
-        val+=1;
+                    var listVal = document.createElement('li');
+                    listVal.classList.add('list-val');
 
-        var listVal = document.createElement('li');
-                var listTitlePlot= document.createElement('span');
-                var listTitle= document.createElement('span');
-                var listPlot= new Image();
-                var favIcon = document.createElement('i');
-                favIcon.classList.add("fa-regular");
-                favIcon.classList.add("fa-heart");
-                favIcon.title="Add to favorites";
-                
-                listTitle.classList.add("list-title");
-                listPlot.classList.add("list-plot");
+                    var listTitlePlot = document.createElement('span');
+                    var listTitle = document.createElement('span');
+                    var listPlot = new Image();
 
-                listTitle.innerText = searchResult.Title;
+                    var favSpan = document.createElement('span');
+                    favSpan.classList.add("favSpan");
 
-                      
-                listPlot.src=searchResult.Poster;
-                listPlot.width="50";
-                listPlot.height="50";
-          
-                listTitlePlot.appendChild(listPlot);
-                listTitlePlot.appendChild(listTitle);
+                    var yearSpan = document.createElement('span');
+                    var genreSpan = document.createElement('span');
+                    var infoSpan= document.createElement('span');
+
+                    var favIcon = document.createElement('i');
+                    favIcon.classList.add("fa-solid");
+                    favIcon.classList.add("fa-heart");
+                    favIcon.setAttribute('id','favButtonHome');
+                    favIcon.title = "Add to favorites";
+
+                    listTitle.classList.add("list-title");
+                    listPlot.classList.add("list-plot");
+
+                    listTitle.innerText = searchResult.Title;
 
 
-                
+                    listPlot.src = searchResult.Poster;
+                    listPlot.width = "100";
+                    listPlot.height = "100";
 
-                
-                
-                // listPlot.setAttribute("src",'searchResult.Plot') ;
-                    listVal.appendChild(listTitlePlot);
-                    listVal.appendChild(favIcon);
-                    // listVal.appendChild(listPlot);
-                    searchList.appendChild(listVal);
-                    // searchList.appendChild(favIcon);
+                    favSpan.appendChild(favIcon);
+
                     
-
-                    listTitlePlot.addEventListener("click", function() {
-                        console.log(`value is`,wrap);
-                    });
-
-                    favIcon.addEventListener("click", function() {
-                        console.log(`added to favourite`,wrap);
-                        favIcon.style.setProperty('color',"red");
-                       
-                    });
+                   yearSpan.innerText = "Year:"+searchResult.Year;
                    
-                    // results += `<div onclick="check('${wrap}')">.................${val}
-                    // </div>`
-                    // console.log(results);
 
-            // <div onclick="fetchDetails(${JSON.stringify(wrap)})">
-            //     <img src="${searchResult.Poster}" alt="" width="75" height="75" style="margin:5px">
-            //     <p>${searchResult.Title}</p>
-            // </div>
-            // <br>`
+                   listTitle.appendChild(yearSpan);
+                   yearSpan.classList.add("year");
+                   
+
+                    listTitlePlot.appendChild(listPlot);
+                    listTitlePlot.appendChild(listTitle);
+
+
+                    listVal.appendChild(listTitlePlot);
+                    listVal.appendChild(favSpan);
+                    
+                    searchList.appendChild(listVal);
+
+
+
+                    listTitlePlot.addEventListener("click", function () {                       
+                        searchString = searchResult.imdbID;
+                        window.location.href='movie-page.html?title='+searchString;                     
+                        console.log(`search value is`, searchString);
+                    });
+
+                    favIcon.addEventListener("click", function () {
+                        searchString=searchResult.Title;
+                        addToFavList(this.searchString);
+                        console.log(`added to favourite`, searchResult.Title);
+                        favIcon.style.setProperty('color', "red");
+
+                    });
 
                 });
 
             }
 
             else {
-                results = `<span> No matching results found type to continue search </span>`
+                var listVal = document.createElement('li');
+                listVal.innerHTML = "No matching results found";
+
+                searchList.appendChild(listVal);
+
+                // results = `<span> No matching results found type to continue search </span>`
                 console.log("No matching results found");
             }
 
-        }
-        );
+        });
 
 }
+
+
+
+
+
 
 function check(val) {
-    console.log("chcek",val);
+    console.log("chcek", val);
 }
-function fetchDetails(title) {
-    console.log(`movei title passed is`,title);
+
+
+function movieDetails(title) {
+
+
+    fetch(`http://www.omdbapi.com/?apikey=${apikey}&t=${title}`)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        var display = `<spam> ${title} </span>`
+
+        document.getElementById('movie-details').innerHTML=display;
+
+    });
 
 }
