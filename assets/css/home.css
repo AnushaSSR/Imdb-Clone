@@ -12,7 +12,7 @@
     
 }
 
-img {
+.plot {
     margin-right: 10%;
 }
 .width {
@@ -97,3 +97,22 @@ i {
     margin-left: 80px;
     
 }
+
+
+@media screen and (max-width:992px) {
+    
+}
+
+
+#recent-movie-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list-val:hover {
+     transform: scale(1.02);
+    box-shadow: 10px 10px 10px rgba(246, 48, 4, 0.5);
+    z-index: 10;
+  }

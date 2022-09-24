@@ -11,13 +11,6 @@ function movieDetails() {
     fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
-            // let ratings = " ";
-
-            // genresList = data.Genre;
-            // console.log(`genre lsi is`,genresList[10]);
-
-            // console.log(data);
-            // searchString = data.imdbID;
 
 
             details = ` 
@@ -68,7 +61,18 @@ function movieDetails() {
 
             `
 
-            // document.getElementById('fav').addEventListener('click',function(){
+            document.getElementById('movie-details-container').innerHTML = details;
+
+        });
+
+}
+
+
+
+
+
+
+                        // document.getElementById('fav').addEventListener('click',function(){
 
             // })
 
@@ -83,7 +87,7 @@ function movieDetails() {
             //         </div>`
 
             //     })
-            document.getElementById('movie-details-container').innerHTML = details;
+
             // document.getElementById('movie-ratings').innerHTML=ratings;
 
             //     var details=" ";
@@ -108,9 +112,13 @@ function movieDetails() {
             //         console.log("No matching results found");
             //     }
 
-        });
+            // let ratings = " ";
 
-}
+            // genresList = data.Genre;
+            // console.log(`genre lsi is`,genresList[10]);
+
+            // console.log(data);
+            // searchString = data.imdbID;
 
 
 

@@ -13,6 +13,8 @@ function addToFavList(movieInfo,page) {
     }
     else {
 
+        
+
         alert("Already added to favourites, Check My favourites for further actions");
     }
 
@@ -22,6 +24,7 @@ function addToFavList(movieInfo,page) {
 function setFavList(movieInfo){
 
     favMovieList.push(movieInfo);
+    console.log(movieInfo);
 
     // favMovieList.forEach(id=>{
        
@@ -36,8 +39,7 @@ function setFavList(movieInfo){
 };
 
 function setProperties(movieInfo,page) {
-    isFavourite= true;
-    if(page == "movie"){
+    if(page == "movie" ){
     document.getElementById('favButton').innerText = "Added to favorites";
     document.getElementById('favButton').style.setProperty('background-color',"black");
     document.getElementById('favButton').style.setProperty('color',"gold");
