@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(238, 227, 17);
+    background-color: goldenrod;
+    
 
 }
 #movie-details-container {
@@ -8,6 +9,8 @@ body {
     background-color:rgba(20, 18, 25, 0.8);
     flex-direction: column;
     color: whitesmoke;
+    border: 1px solid gold;
+    
 }
 
 .movie-details {
@@ -26,17 +29,70 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 10%;
+    width: 40%;
 
 }
 
 .movie-plot ,.movie-title{
-    margin: 0% 0% 0% 5%;
+    margin: 0% 2% 0% 5%;
+    font-size: 1.5rem;
+}
+
+.btn-style {
+    border: 3% solid black;
+    background-color: black;
+    color: yellow;
+    border-radius: 5%;
+    cursor: pointer;
+
+}
+
+/* .rating {
+    background-color: black;
+    color: yellow;
+
+} */
+#voteVal {
+    margin: 0;
+}
+
+.fa-star {
+    color: goldenrod;
+}
+.font-family {
+    font-family: monospace;
+}
+.movie-plot {
+    color: palegoldenrod;
+    font-size:large;
+}
+
+.movie-title {
+    font-variant: small-caps ;
+    font-weight: bolder;
+    color: goldenrod;
 }
 #favIcon {
     color: red;
 }
+.title {
+    margin-top: 2%;
+
+}
+/* #favSpan {
+    margin: 15% 0% 0% -1%;
+} */
+
+#favButton {
+background-color: gold;}
+
 #fav{
     background-color: gold;
     display: flex;
     justify-content: center;
+}
+
+
+.hr {
+    color:rgba(20, 18, 25, 0);
 }

@@ -1,4 +1,4 @@
-
+var genresList=[];
 
 let apikey = "677792fa";
 let urlString = window.location.href;
@@ -11,40 +11,60 @@ function movieDetails() {
     fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
-            let ratings = " ";
+            // let ratings = " ";
+
+            // genresList = data.Genre;
+            // console.log(`genre lsi is`,genresList[10]);
+
+            // console.log(data);
+            // searchString = data.imdbID;
 
 
-            console.log(data);
-            searchString = data.imdbID;
-
-            details = `        
-            <div class="title"> 
+            details = ` 
+                   
+            <div class="title" > 
                 <span class="movie-title col-12 display-4">${data.Title}</span>
             </div> 
-                                    
-            <div class="movie-plot">
-                <p>${data.Plot}</p>
+                       
+            <hr class="hr">
+
+            <div class="movie-plot font-family">
+                ${data.Plot}
             </div>
 
-            <div class="movie-details">
+            <div class="movie-details font-family">
                 
                 <div class="movie-poster">
                     <img src="${data.Poster}" width="200" height="300">
                 </div>
                 
                 <span class="movie-data">
-                    <p>Actors : ${data.Actors}</p>
-                    <p>IMDB Rating: ${data.imdbRating}</p>
-                </span>  
-            </div>
-            
-            
-            <div id="fav">
-                <span>
-                    <button id="favButton" class="btn btn-success" onclick=addToFavList(searchString,"movie") ><i id="favIcon" class="fa-solid fa-heart "></i>
-                    Add to favorites</button>
+                    <p>
+                    Imbdb Ratings
+                    <p>
+                        <span class="key"><button class="btn-style rating"><i class="fa-solid fa-star"></i> ${data.imdbRating}</button></span>
+                        <span class="key"><button class="btn-style country">Votes: ${data.imdbVotes} </button> </span>
+                     </p>   
+                    </p>
+                    
+                    
+                    <p><span class="key">Actors :</span> ${data.Actors}</p>
+                    <p><span class="key">Genres : </span> ${data.Genre}</p>
+                    <p><span class="key"> Director: </span> ${data.Director} </p>
+                    <p><span class="key"> Release date: </span>${data.Released} </p>
+                    
+                                
+                <span id="favSpan">
+                    <button id="favButton" class="btn" onclick=addToFavList(searchString,"movie") >
+                        <i id="favIcon" class="fa-solid fa-heart "></i> Add to favorites
+                    </button>
                 </span>
+
+
+
             </div>
+            
+            
 
             `
 

@@ -21,7 +21,7 @@ img {
 
 #form-input {
     background-color: white;
-    transition-duration: 0.4s;
+    transition-duration: 0.4s ease-in-out;
     cursor: pointer;
     border: 2px black solid;
 
@@ -54,6 +54,11 @@ img {
     width: 70%;
 }
 
+/* .key {
+    color: gold;
+    font-weight: bold;
+} */
+
 /* .set-span img {
     width: 125px;
 } */
@@ -85,4 +90,10 @@ i {
 
 .bold{
     font-weight: bold;
+}
+
+
+.nav-item {
+    margin-left: 80px;
+    
 }

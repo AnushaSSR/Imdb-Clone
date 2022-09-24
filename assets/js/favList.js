@@ -38,10 +38,10 @@ function setFavList(movieInfo){
 function setProperties(movieInfo,page) {
     isFavourite= true;
     if(page == "movie"){
-    document.getElementById('favButton').classList.add('btn-danger');
-    document.getElementById('fav').style.setProperty('background-color', "green");
     document.getElementById('favButton').innerText = "Added to favorites";
-    
+    document.getElementById('favButton').style.setProperty('background-color',"black");
+    document.getElementById('favButton').style.setProperty('color',"gold");
+
     console.log(isFavourite);
 }
 
