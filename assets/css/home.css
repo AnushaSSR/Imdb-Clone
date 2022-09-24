@@ -3,19 +3,60 @@
     background-color:black;
     color:white;
     padding:0;
-    left: 36%;
+    left:36%;
     position: absolute;
     z-index: 999;
-    top: 80%;
+    top: 72%;
     list-style: none;
+    width: 36%;
     
 }
+
+img {
+    margin-right: 10%;
+}
+.width {
+    width: 200%;
+}
+
+#form-input {
+    background-color: white;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px black solid;
+
+
+}
+.btn-hover {
+    background-color: gold;
+    color: black;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.btn-hover:hover {
+    background-color: gold;
+}
+
+#btn-icon{
+    color: black;
+
+}
 .list-title {
-    display: inline-block;
+    font-weight: bold;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 20px;
 }
-.list-plot {
+.set-span{
     margin: 10px;
+    display: flex;
+    width: 70%;
 }
+
+/* .set-span img {
+    width: 125px;
+} */
  
 .list-val {
     display: flex;
@@ -28,11 +69,20 @@
 
 .year {
     display: block;
+    font-weight: 100;
+    color: gold;
+
+
 }
 .favSpan {
-
+        margin: 50px;
+    
 }
 i {
     color: white;
     
 } 
+
+.bold{
+    font-weight: bold;
+}

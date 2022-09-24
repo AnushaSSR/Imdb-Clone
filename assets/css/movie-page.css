@@ -13,8 +13,14 @@ body {
 .movie-details {
     width:100%;
     display: inline-flex;
-    margin:50px;
+    margin:6%;
 }
+/* hr {
+    margin: 0;
+    color: darkgoldenrod;
+}.col-12 {
+    color: goldenrod;
+} */
 
 .movie-data{
     display: flex;
@@ -26,7 +32,11 @@ body {
 .movie-plot ,.movie-title{
     margin: 0% 0% 0% 5%;
 }
-
+#favIcon {
+    color: red;
+}
 #fav{
-    background-color: red;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
 }

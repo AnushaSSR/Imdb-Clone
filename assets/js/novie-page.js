@@ -1,8 +1,8 @@
 
 
 let apikey = "677792fa";
-let urlString= window.location.href;
-let url= new URL(urlString);
+let urlString = window.location.href;
+let url = new URL(urlString);
 let isFavorite = false;
 let searchString = url.searchParams.get("title");
 movieDetails();
@@ -11,79 +11,82 @@ function movieDetails() {
     fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
-            let ratings=" ";
+            let ratings = " ";
 
 
             console.log(data);
-            searchString=data.imdbID;
-            
-            details=`
+            searchString = data.imdbID;
 
-            <div class="text-center" id="fav" onClick="addToFavList(searchString)"><span id="favText">Add to Favorites <i id="favButton" class="fa-regular fa-heart"></i></div>
-            </div>
-    
-            <div>
-            <div class="title"> <span class="movie-title col-12 display-4">${data.Title}</span></div> 
-            
-                        
+            details = `        
+            <div class="title"> 
+                <span class="movie-title col-12 display-4">${data.Title}</span>
+            </div> 
+                                    
             <div class="movie-plot">
-            <p>${data.Plot}</p>
+                <p>${data.Plot}</p>
             </div>
 
             <div class="movie-details">
                 
-                <div class="movie-poster"><img src="${data.Poster}" width="200" height="300"></div>
+                <div class="movie-poster">
+                    <img src="${data.Poster}" width="200" height="300">
+                </div>
                 
                 <span class="movie-data">
                     <p>Actors : ${data.Actors}</p>
                     <p>IMDB Rating: ${data.imdbRating}</p>
-
                 </span>  
-                    
             </div>
             
             
+            <div id="fav">
+                <span>
+                    <button id="favButton" class="btn btn-success" onclick=addToFavList(searchString,"movie") ><i id="favIcon" class="fa-solid fa-heart "></i>
+                    Add to favorites</button>
+                </span>
+            </div>
+
             `
 
             // document.getElementById('fav').addEventListener('click',function(){
 
             // })
 
-            
 
 
 
-        //    data.Ratings.forEach(rating=>{
-        //         console.log(rating.Source);
-        //         ratings += `<div> 
-        //         <span>1</span>
-        //         </div>`
 
-        //     })
-          document.getElementById('movie-details-container').innerHTML =details;
+            //    data.Ratings.forEach(rating=>{
+            //         console.log(rating.Source);
+            //         ratings += `<div> 
+            //         <span>1</span>
+            //         </div>`
+
+            //     })
+            document.getElementById('movie-details-container').innerHTML = details;
             // document.getElementById('movie-ratings').innerHTML=ratings;
 
-        //     var details=" ";
+            //     var details=" ";
 
-        //     var searchList = document.getElementById('search-list');
+            //     var searchList = document.getElementById('search-list');
 
-        //     searchList.innerHTML = " ";
+            //     searchList.innerHTML = " ";
 
-        //     if (data.Search) {
-        //         details += <div> ${Search.Title}</div>
+            //     if (data.Search) {
+            //         details += <div> ${Search.Title}</div>
 
 
-        //     }
+            //     }
 
-        //     else {
-        //         var listVal = document.createElement('li');
-        //         listVal.innerHTML = "No matching results found";
+            //     else {
+            //         var listVal = document.createElement('li');
+            //         listVal.innerHTML = "No matching results found";
 
-        //         searchList.appendChild(listVal);
+            //         searchList.appendChild(listVal);
 
-        //         // results = `<span> No matching results found type to continue search </span>`
-        //         console.log("No matching results found");
-        //     }
+            //         // results = `<span> No matching results found type to continue search </span>`
+            //         console.log("No matching results found");
+            //     }
 
         });
 

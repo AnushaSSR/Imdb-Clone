@@ -18,6 +18,7 @@ function searchResults(searchString) {
             var searchList = document.getElementById('search-list');
 
             searchList.innerHTML = " ";
+           
 
             if (data.Search) {
 
@@ -27,19 +28,21 @@ function searchResults(searchString) {
 
                     var listTitlePlot = document.createElement('span');
                     var listTitle = document.createElement('span');
+                    var imgSpan = document.createElement('span');
                     var listPlot = new Image();
+                    
+                    imgSpan.appendChild(listPlot);
 
                     var favSpan = document.createElement('span');
                     favSpan.classList.add("favSpan");
 
+                    listTitlePlot.classList.add('set-span');
                     var yearSpan = document.createElement('span');
-                    var genreSpan = document.createElement('span');
-                    var infoSpan= document.createElement('span');
 
                     var favIcon = document.createElement('i');
                     favIcon.classList.add("fa-solid");
                     favIcon.classList.add("fa-heart");
-                    favIcon.setAttribute('id','favButtonHome');
+                    favIcon.setAttribute('id',`favButtonHome-${searchResult.imdbID}`);
                     favIcon.title = "Add to favorites";
 
                     listTitle.classList.add("list-title");
@@ -62,7 +65,7 @@ function searchResults(searchString) {
                    yearSpan.classList.add("year");
                    
 
-                    listTitlePlot.appendChild(listPlot);
+                    listTitlePlot.appendChild(imgSpan);
                     listTitlePlot.appendChild(listTitle);
 
 
@@ -80,9 +83,9 @@ function searchResults(searchString) {
                     });
 
                     favIcon.addEventListener("click", function () {
-                        searchString=searchResult.Title;
-                        addToFavList(this.searchString);
-                        console.log(`added to favourite`, searchResult.Title);
+                        //searchString=sear;
+                        addToFavList(searchResult,"home");
+                        console.log(searchResult);
                         favIcon.style.setProperty('color', "red");
 
                     });
