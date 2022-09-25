@@ -1,93 +1,85 @@
-var favoritemovie = "Shrek";
-sessionStorage.setItem("favoriteMovie", favoritemovie);
 let apikey = "677792fa";
 let searchString = " ";
 
+//string for getting the random movie to be sent
 let titleValues = ["get", "hel", "cat", "ten"];
 let valueIndex = Math.floor(Math.random() * titleValues.length);
 
+//get the movie and display the recent movies on home page
 getRecentMovies(titleValues[valueIndex]);
 
+
+
+//function to display the search results in the list
 function searchResults(searchString) {
 
     fetch(`http://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
 
-            console.log(data);
-
             var searchList = document.getElementById('search-list');
-
             searchList.innerHTML = " ";
 
-
             if (data.Search) {
-
                 data.Search.forEach(searchResult => {
                     var listVal = document.createElement('li');
                     listVal.classList.add('list-val');
 
                     var listTitlePlot = document.createElement('span');
-                    var listTitle = document.createElement('span');
-                    var imgSpan = document.createElement('span');
-                    var listPlot = new Image();
-                    listPlot.classList.add('plot');
-
-                    imgSpan.appendChild(listPlot);
-
-                    var favSpan = document.createElement('span');
-                    favSpan.classList.add("favSpan");
-
                     listTitlePlot.classList.add('set-span');
-                    var yearSpan = document.createElement('span');
 
-                    var favIcon = document.createElement('i');
-                    favIcon.classList.add("fa-solid");
-                    favIcon.classList.add("fa-heart");
-                    favIcon.setAttribute('id', `favButtonHome-${searchResult.imdbID}`);
-                    favIcon.title = "Add to favorites";
-
+                    var listTitle = document.createElement('span');
                     listTitle.classList.add("list-title");
-                    listPlot.classList.add("list-plot");
-
                     listTitle.innerText = searchResult.Title;
 
 
+                    var imgSpan = document.createElement('span');
+                    var listPlot = new Image();
+                    listPlot.classList.add("list-plot");
                     listPlot.src = searchResult.Poster;
                     listPlot.width = "100";
                     listPlot.height = "100";
 
-                    favSpan.appendChild(favIcon);
 
+                    var favSpan = document.createElement('span');
+                    favSpan.classList.add("favSpan");
 
+                    var yearSpan = document.createElement('span');
                     yearSpan.innerText = "Year:" + searchResult.Year;
-
-
-                    listTitle.appendChild(yearSpan);
                     yearSpan.classList.add("year");
+                    
+                    var favIcon = document.createElement('i');
+                    favIcon.classList.add("fa-solid");
+                    favIcon.classList.add("fa-heart");
 
+                    if(movieExists(searchResult.imdbID)){
+                        favIcon.style.setProperty('color', "red");
+                        favIcon.title = "Added to favorites";
 
+                    }
+                    else {
+                    favIcon.title = "Add to favorites";}
+
+        
+                    favIcon.setAttribute('id', `favButtonHome-${searchResult.imdbID}`);
+                    
+                    imgSpan.appendChild(listPlot);
+                    favSpan.appendChild(favIcon);
+                    listTitle.appendChild(yearSpan);
                     listTitlePlot.appendChild(imgSpan);
                     listTitlePlot.appendChild(listTitle);
-
-
                     listVal.appendChild(listTitlePlot);
                     listVal.appendChild(favSpan);
-
                     searchList.appendChild(listVal);
-
-
 
                     listTitlePlot.addEventListener("click", function () {
                         searchString = searchResult.imdbID;
                         window.location.href = 'movie-page.html?title=' + searchString;
-                        console.log(`search value is`, searchString);
                     });
 
                     favIcon.addEventListener("click", function () {
                         //searchString=sear;
-                        addToFavList(searchResult, "home");
-                        console.log(searchResult);
+                        addToFavList(searchResult.imdbID, "home");
                         favIcon.style.setProperty('color', "red");
 
                     });
@@ -111,45 +103,19 @@ function searchResults(searchString) {
 }
 
 
-
-//         console.log(data);
-
-//         if (data.Search) {
-
-//             data.Search.forEach(movie => {
-
-//                 movies += `
-//     <div class="card">
-//         <img src="${movie.Poster}" alt="">
-//         <div class="card-body">
-//             <h5 class="card-title">${movie.Title}</h5>
-//         </div>
-//     </div>
-//     `
-
-//             });
-//             document.getElementById('recent-movie-list').innerHTML = movies;
-//         }
-
-//     }
-// }
-
+//chcek the value
 //let movies;
-//To display the recent movies
-let movies;
-function getRecentMovies(movieName) {
-    // alert("called the file to get recent movies");
-    // console.log(movieName);
+//Function to display recent movies on home screen by passing random string
 
+function getRecentMovies(movieName) {
     fetch(`http://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${movieName}&year=2022`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
 
+
+            let movies = "";
             if (data.Search) {
-
                 data.Search.forEach(movie => {
-
                     movies += `<span style="width:15rem","height:10rem">
                                 <div class="card" style="width:15rem">
                                     <img src="${movie.Poster}" alt=" width="200px" height="200px">
@@ -159,16 +125,10 @@ function getRecentMovies(movieName) {
                                     </div>
                                 </div>
                                </span>`
-
-                    document.getElementById('recent-movie-list').innerHTML = movies;
-
-
                 });
-
-
+                document.getElementById('recent-movie-list').innerHTML = movies;
             }
-
-
-
         });
 }
+
+

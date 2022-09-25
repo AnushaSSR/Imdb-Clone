@@ -24,7 +24,7 @@
                             logo
                         >
                     </a>
-                </a>
+                
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -38,8 +38,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link"  href="home.html">Home</a>
+                        <li class="nav-item ">
+                            <a class="nav-link active"  aria-current="page" href="home.html">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a
@@ -86,10 +86,7 @@
             <ul id="search-list"></ul>
         </nav>
     </header>
-    <main>
-
-        
-
+    <main>    
         <section class="slideshow">
             <div class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
@@ -114,17 +111,15 @@
                 hard coded:recent-movie-container
             </div>
         </section>
-        <section id="Trending Series"></section>
     </main>
 </script>
 </body>
-<script src="../assets/js/loadAPI.js"></script>
+<script src="../assets/js/load-api.js"></script>
 <script src="../assets/js/carousel-load.js"></script>
-<script src="../assets/js/favList.js"></script>
+<script src="../assets/js/fav-list.js"></script>
 <script>
-        function getSearchInput(){
-            
-            document.getElementById('form-input').removeAttribute("hidden");
-        }
+    function getSearchInput(){      
+        document.getElementById('form-input').removeAttribute("hidden");
+    }
 </script>
 </html>
