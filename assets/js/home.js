@@ -2,7 +2,7 @@ let apikey = "677792fa";
 let searchString = " ";
 
 //string for getting the random movie to be sent
-let titleValues = ["get", "hel", "cat", "ten"];
+let titleValues = ["get", "cat", "ten"];
 let valueIndex = Math.floor(Math.random() * titleValues.length);
 
 //get the movie and display the recent movies on home page
@@ -42,7 +42,7 @@ function searchResults(searchString) {
 
 
                     var favSpan = document.createElement('span');
-                    favSpan.classList.add("favSpan");
+                    favSpan.classList.add("fav-span");
 
                     var yearSpan = document.createElement('span');
                     yearSpan.innerText = "Year:" + searchResult.Year;
@@ -115,19 +115,26 @@ function getRecentMovies(movieName) {
             let movies = "";
             if (data.Search) {
                 data.Search.forEach(movie => {
-                    movies += `<span style="width:15rem","height:10rem">
-                                <div class="card" style="width:15rem">
-                                    <img src="${movie.Poster}" alt=" width="200px" height="200px">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${movie.Title}</h5>
-                                        <p> ${movie.imdbRating}</p>
-                                    </div>
+                    movies += `<div class="card-container" style="width:15rem;height:18rem">
+                                <div class="movie-card" style="width:15rem;height:90%">
+                                    <a class="movie-link" href = 'movie-page.html?title= ${movie.imdbID}'>
+                                    <img src="${movie.Poster}" alt=" " width="200px" height="200px" onclick="movieDetails()" class="home-movie-poster"></a>
+                                    <div class="movie-card-body">
+                                        <span class="card-content"><h5 class="card-title">${movie.Title}</h5></span>
+                                    <span id="movie-fav-span">
+                                    <button id="movie-list-heart">`
+                                    if(movieExists(movie.imdbID)){    
+                                    
+                                        movies += `<i class="fa-solid fa-heart " title="Added to favorites" id="favButtonHome-${movie.imdbID}" onclick="addToFavList('${movie.imdbID}', 'home')" style="color: red"> </i></button>`}
 
-                                    <span id="favSpan">
-                                        <i class="fa-solid fa-heart" title="Added to favorites" id="favButtonHome-tt0252245" style="color: red;"></i>
-                                    </span>
+                                        else{
+                                            movies +=`<i class="fa-solid fa-heart " title="Add to favorites" id="favButtonHome-${movie.imdbID}" onclick="addToFavList('${movie.imdbID}', 'home')" > </i></button>`
+                                        }
+                                        movies+=`</span>
+
+                                    </div>
                                 </div>
-                               </span>`
+                               </div>`
                 });
                 document.getElementById('recent-movie-list').innerHTML = movies;
             }

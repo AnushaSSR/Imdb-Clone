@@ -37,12 +37,6 @@ function setFavList(movieInfo) {
     favMovieList.push(movieInfo);
     console.log(`movie added is `, movieInfo);
 
-    // favMovieList.forEach(id=>{
-
-    //     console.log(`id's added are`,id[0].Type);
-    // });
-
-
     localStorage.setItem("favlist", JSON.stringify(favMovieList));
 
 };
@@ -69,23 +63,31 @@ function setProperties(movieInfo, page) {
         document.getElementById('favButton').style.setProperty('background-color', "black");
         document.getElementById('favButton').style.setProperty('color', "gold");
 
-        console.log(isFavourite);
     }
 
     else {
         document.getElementById(`favButtonHome-${movieInfo}`).style.setProperty('color', "red");
         document.getElementById(`favButtonHome-${movieInfo}`).setAttribute('title', "Added to favorites");
         document.getElementById(`favButtonHome-${movieInfo}`).disabled = true;
-
-
-
-
-
     }
 
 
 }
 
+
+function removeFromList(movieID) {
+
+    var changedList= favMovieList.filter(movieList=>{
+        return movieList.imdbID !== movieID;
+    })
+
+    console.log(`changed lost is ===============`,changedList);
+    localStorage.setItem("favlist", JSON.stringify(changedList));
+    location.reload();
+    displayFavListMain(changedList);
+
+
+}
 function displayFavListMain(favlist) {
 
     let favList = "";
@@ -126,12 +128,11 @@ function displayFavListMain(favlist) {
                 </div>
 
                 <div>
-                    <button class="remove-item-button"> Remove from favourites </button>
+                    <button class="remove-item-button" onclick="removeFromList('${movieDetails.imdbID}')"> Remove from favourites </button>
                 </div>
             </span>
             
             </li>`
-        console.log(document.getElementById('check'));
         document.getElementById('fav-list').innerHTML = favList;
     }
 

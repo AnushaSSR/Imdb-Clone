@@ -4,6 +4,17 @@ main{
 
 
 }
+
+#recent-movie-container {
+
+    display: flex;
+    background-color:rgba(20, 18, 25, 0.8);
+    flex-direction: column;
+    color: whitesmoke;
+    border: 1px solid gold;
+    
+}
+
 h1{
     color: whitesmoke;
     margin: 2%;
@@ -107,3 +118,6 @@ img {
     flex-direction: column;
 
 }
+
+
+

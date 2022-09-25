@@ -1,8 +1,14 @@
 body {
-    background-color: goldenrod;
-    
+            
 
 }
+
+    main {
+        border: 3px solid gold;
+    
+    }
+
+
 #movie-details-container {
 
     display: flex;
@@ -33,7 +39,7 @@ body {
 
 }
 
-.movie-plot ,.movie-title{
+.movie-plot {
     margin: 0% 2% 0% 5%;
     font-size: 1.5rem;
 }
@@ -68,6 +74,8 @@ body {
 }
 
 .movie-title {
+    margin: 0% 2% 0% 2%;
+
     font-variant: small-caps ;
     font-weight: bolder;
     color: goldenrod;
@@ -75,13 +83,9 @@ body {
 #favIcon {
     color: red;
 }
-.title {
-    margin-top: 2%;
-
+#favSpan {
+    text-align: left;
 }
-/* #favSpan {
-    margin: 15% 0% 0% -1%;
-} */
 
 #favButton {
 background-color: gold;}

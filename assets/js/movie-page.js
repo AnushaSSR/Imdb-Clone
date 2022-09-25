@@ -42,10 +42,10 @@ function movieDetails() {
                         <span class="key"><button class="btn-style country">Votes: ${data.imdbVotes} </button> </span>
                      </p>   
                     </p>     
-                    <p><span class="key">Actors :</span> ${data.Actors}</p>
-                    <p><span class="key">Genres : </span> ${data.Genre}</p>
-                    <p><span class="key"> Director: </span> ${data.Director} </p>
-                    <p><span class="key"> Release date: </span>${data.Released} </p>
+                    <p><span class="key">Actors: </span> ${data.Actors}</p>
+                    <p><span class="key">Genres: </span> ${data.Genre}</p>
+                    <p><span class="key">Director: </span> ${data.Director} </p>
+                    <p><span class="key">Released: </span>${data.Released} </p>
                       
                     <span id="favSpan">                
                         <button id="favButton" class="btn" onclick=addToFavList(searchString,"movie") >

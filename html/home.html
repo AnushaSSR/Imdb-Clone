@@ -24,102 +24,83 @@
                             logo
                         >
                     </a>
-                
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item ">
-                            <a class="nav-link active"  aria-current="page" href="home.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a
-                                class="nav-link dropdown-toggle"
-                                href="#"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Trending
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#">Movies</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Series</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my-fav-movies.html">My Favorites</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact us</a>
-                        </li>
-                        <form class="d-flex" role="search">
-                            <input
-                                class="form-control me-2"
-                                type="search"
-                                placeholder="Type here to search"
-                                aria-label="Search"
-                                onkeyup="searchResults(this.value)"
-                                id="form-input"
-                                hidden="true"
-                            >
-                            <button class="btn-hover" type="submit" onmousedown="getSearchInput()">
-                                <i class="fa-solid fa-magnifying-glass-plus" id="btn-icon"></i>
-                            </button>
-                        </form>
-                    </ul>
-                </div>
-            </div>
-            <ul id="search-list"></ul>
-        </nav>
-    </header>
-    <main>    
-        <section class="slideshow">
-            <div class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <a href="#"></a>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Trending
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Movies</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Series</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="my-fav-movies.html">My Favorites</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact us</a>
+                            </li>
+                            <form class="d-flex" role="search">
+                                <input
+                                    class="form-control me-2"
+                                    type="search"
+                                    placeholder="Type here to search"
+                                    aria-label="Search"
+                                    onkeyup="searchResults(this.value)"
+                                    id="form-input"
+                                    hidden="true"
+                                >
+                                <button class="btn-hover" type="submit" onmousedown="getSearchInput()">
+                                    <i class="fa-solid fa-magnifying-glass-plus" id="btn-icon"></i>
+                                </button>
+                            </form>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="recent-movie-container">
-            <div id="recent-movie-list">
-                hard coded:recent-movie-container
-            </div>
-        </section>
-    </main>
-</script>
-</body>
-<script src="../assets/js/home.js"></script>
-<script src="../assets/js/carousel-load.js"></script>
-<script src="../assets/js/fav-list.js"></script>
-<script>
+                <!-- list to add the search elements -->
+                    <ul id="search-list"></ul>
+            </nav>
+        </header>
+        <main>
+            <section id="recent-movie-container">
+                <h1 class="title">Recent Movies</h1>
+                <div id="recent-movie-list">
+                    hard coded:recent-movie-container
+                </div>
+            </section>
+        </main>
+    </body>
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/carousel-load.js"></script>
+    <script src="../assets/js/fav-list.js"></script>
+    <script>
     function getSearchInput(){      
         document.getElementById('form-input').removeAttribute("hidden");
     }
-</script>
+    </script>
 </html>
