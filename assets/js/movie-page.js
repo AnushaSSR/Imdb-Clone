@@ -11,8 +11,6 @@ let searchString = url.searchParams.get("title");
 movieDetails();
 
 function movieDetails() {
-    alert(searchString);
-
     fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
@@ -61,7 +59,7 @@ function movieDetails() {
             if(movieExists(data.imdbID)){
                 const favButton= document.getElementById('favSpan');
                 const favSpan =`<span id="favSpan">                
-                <button id="favButton" class="btn" style="color:yellow ; background-color:black">
+                <button id="favButton" class="btn" style="color:yellow ; background-color:black" onclick=addToFavList(searchString,"movie")>
                     Added to favorites
                 </button>
             </span>`

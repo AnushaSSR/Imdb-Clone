@@ -112,7 +112,6 @@ function getRecentMovies(movieName) {
         .then((response) => response.json())
         .then((data) => {
 
-
             let movies = "";
             if (data.Search) {
                 data.Search.forEach(movie => {
@@ -123,6 +122,10 @@ function getRecentMovies(movieName) {
                                         <h5 class="card-title">${movie.Title}</h5>
                                         <p> ${movie.imdbRating}</p>
                                     </div>
+
+                                    <span id="favSpan">
+                                        <i class="fa-solid fa-heart" title="Added to favorites" id="favButtonHome-tt0252245" style="color: red;"></i>
+                                    </span>
                                 </div>
                                </span>`
                 });
