@@ -1,0 +1,134 @@
+main{
+    background-color:rgba(20, 18, 25, 0.8);
+    border: 3px solid gold;
+}
+
+.nav-item {
+    margin-left: 80px;   
+}
+
+
+.fav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.fav-list-item {
+    border: 2px solid black;
+    margin:50px;
+}
+
+
+.fav-list-item-span{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ratings{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+
+.ratings-value,.awards {
+    color: black;
+    font-weight: bold;
+}
+
+
+.key {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.font-style{
+    font-family: monospace;
+
+}
+
+.btn-style {
+    border: 3% solid black;
+    background-color: black;
+    color: yellow;
+    border-radius: 5%;
+    cursor: pointer;
+
+}
+
+
+.movie-details {
+    display: flex;
+    justify-content: space-between;
+} 
+.details-span {
+    width:85%;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.movie-title {
+    font-weight: bolder;
+    color: goldenrod;
+
+}
+
+
+.plot {
+    color: palegoldenrod;
+}
+
+
+
+.crew {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+.remove-item-button {
+    border: 3% solid yellow;
+    background-color: red;
+    color: yellow;
+    border-radius: 6%;
+    
+}
+
+
+
+
+
+#recent-movie-container {
+
+    display: flex;
+    background-color:rgba(20, 18, 25, 0.8);
+    flex-direction: column;
+    color: whitesmoke;
+    border: 1px solid gold;
+    
+}
+
+h1{
+    color: whitesmoke;
+    margin: 2%;
+}
+
+ul {
+    list-style: none;
+}
+
+
+img {
+    margin: 10px;
+}
+
+
+
+

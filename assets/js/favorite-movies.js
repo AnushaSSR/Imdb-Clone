@@ -100,11 +100,11 @@ function displayFavListMain(favlist) {
             <span class="fav-list-item-span">
                 <span class="ratings">
                     <span class="movie-ratings font-style">
-                        <span class="rating-details key">Awards<span>
+                        <span class="awards key">Awards<span>
                         <span class="key"><button class="btn-style awards"> ${movieDetails.Awards}</button></span>
                     </span>  
-                    <span class="awards font-style">
-                        <span class="rating-details key">Imbdb Ratings<span>
+                    <span class="rating-details font-style">
+                        <span class="ratings-value key">Imbdb Ratings<span>
                         <span class="key"><button class="btn-style rating"><i class="fa-solid fa-star"></i> ${movieDetails.imdbRating}</button></span>
                     </span>   
                     
