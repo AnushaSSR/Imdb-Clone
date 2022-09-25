@@ -112,13 +112,13 @@ main {
 border: 5px solid black;
 margin: 2%;
 }
-/* .title{    
+.title{    
     margin: 1% 4% 1% 4%;
     color:white;
     font-family: monospace;
 
 
-} */
+}
 
 
 #recent-movie-list {
