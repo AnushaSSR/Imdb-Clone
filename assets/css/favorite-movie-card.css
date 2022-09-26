@@ -54,7 +54,7 @@ body {
     border: 1px solid yellow;
     background-color: black;
     color: gold;
-    border-radius: 5%;
+    border-radius: 4%;
 }
 
 /*Movie details*/
@@ -73,8 +73,7 @@ body {
 }
 
 .home-link:hover{
-    color: white;
-    
+    color: white;   
 }
 
 /*if favorites exists*/
@@ -108,7 +107,7 @@ body {
     border: 2px solid gold;
     background-color: red;
     color: gold;
-    border-radius: 6%;
+    border-radius: 4%;
 }
 
 /*miscalenous for setting the view*/

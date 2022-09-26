@@ -5,7 +5,7 @@ let apikey = "677792fa";
 let urlString = window.location.href;
 let url = new URL(urlString);
 let isFavorite = false;
-let searchString = url.searchParams.get("title");
+let searchString = url.searchParams.get("title").trim();//trimmed to delet the spaces added
 
 //method call to fetch the details when user clicked on a movie
 movieDetails();
