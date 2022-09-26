@@ -8,8 +8,10 @@ if (JSON.parse(localStorage.getItem("favlist"))) {
 window.onload = displayFavListMain(favMovieList);
 
 function addToFavList(movieID, page) {
-    // console.log("data from the list is",favMovieList);
+    console.log("data from the list is",movieID);
     let index = favMovieList.filter(movielist => {
+        console.log(movielist.imdbID);
+        console.log(movielist.imdbID === movieID);
         return movielist.imdbID === movieID;
     });
 
@@ -76,9 +78,10 @@ function setProperties(movieInfo, page) {
 
 
 function removeFromList(movieID) {
+    // var favFetch=JSON.parse(favMovieList.getItem("favlist"));
 
     var changedList= favMovieList.filter(movieList=>{
-        return movieList.imdbID !== movieID;
+        return movieList.imdbID != movieID;
     })
 
     console.log(`changed lost is ===============`,changedList);

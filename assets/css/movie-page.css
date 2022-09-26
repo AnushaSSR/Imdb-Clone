@@ -7,10 +7,13 @@ body {
         border: 3px solid gold;
     
     }
+/* /navigation bar */
+    .nav-item {
+        margin-left: 80px;   
+    }
 
-
+    /* movie details */
 #movie-details-container {
-
     display: flex;
     background-color:rgba(20, 18, 25, 0.8);
     flex-direction: column;
@@ -18,18 +21,25 @@ body {
     border: 1px solid gold;
     
 }
-
-.movie-details {
-    width:100%;
-    display: inline-flex;
-    margin:6%;
-}
 /* hr {
     margin: 0;
     color: darkgoldenrod;
 }.col-12 {
     color: goldenrod;
 } */
+
+
+.movie-plot {
+    margin: 0% 2% 0% 5%;
+    font-size: 1.5rem;
+}
+
+
+.movie-details {
+    width:100%;
+    display: inline-flex;
+    margin:6%;
+}
 
 .movie-data{
     display: flex;
@@ -39,10 +49,6 @@ body {
 
 }
 
-.movie-plot {
-    margin: 0% 2% 0% 5%;
-    font-size: 1.5rem;
-}
 
 .btn-style {
     border: 3% solid black;
@@ -53,25 +59,28 @@ body {
 
 }
 
+
+.fa-star {
+    color: goldenrod;
+}
+
+#favSpan {
+    text-align: left;
+}
+
+#favButton {
+    background-color: gold;}
+    
+
 /* .rating {
     background-color: black;
     color: yellow;
 
 } */
-#voteVal {
+/* #voteVal {
     margin: 0;
-}
+} */
 
-.fa-star {
-    color: goldenrod;
-}
-.font-family {
-    font-family: monospace;
-}
-.movie-plot {
-    color: palegoldenrod;
-    font-size:large;
-}
 
 .movie-title {
     margin: 0% 2% 0% 2%;
@@ -80,15 +89,17 @@ body {
     font-weight: bolder;
     color: goldenrod;
 }
+
+.movie-plot {
+    color: palegoldenrod;
+    font-size:large;
+}
+
+
 #favIcon {
     color: red;
 }
-#favSpan {
-    text-align: left;
-}
 
-#favButton {
-background-color: gold;}
 
 #fav{
     background-color: gold;

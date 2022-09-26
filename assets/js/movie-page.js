@@ -54,6 +54,7 @@ function movieDetails() {
                     </span>
                 </span>
             </div>`
+            console.log(`searchString is`,searchString);
 
             document.getElementById('movie-details-container').innerHTML = details;
             if(movieExists(data.imdbID)){
