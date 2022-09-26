@@ -38,8 +38,8 @@ function movieDetails() {
                     <p>
                     Imbdb Ratings
                      <p>
-                        <span class="key"><button class="btn-style rating"><i class="fa-solid fa-star"></i> ${data.imdbRating}</button></span>
-                        <span class="key"><button class="btn-style country">Votes: ${data.imdbVotes} </button> </span>
+                        <span class="key"><button class="btn-style rating" disabled><i class="fa-solid fa-star"></i> ${data.imdbRating}</button></span>
+                        <span class="key"><button class="btn-style country" disabled>Votes: ${data.imdbVotes} </button> </span>
                      </p>   
                     </p>     
                     <p><span class="key">Actors: </span> ${data.Actors}</p>
@@ -54,8 +54,6 @@ function movieDetails() {
                     </span>
                 </span>
             </div>`
-            console.log(`searchString is`,searchString);
-
             document.getElementById('movie-details-container').innerHTML = details;
             if(movieExists(data.imdbID)){
                 const favButton= document.getElementById('favSpan');

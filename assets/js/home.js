@@ -34,11 +34,11 @@ function searchResults(searchString) {
 
 
                     var imgSpan = document.createElement('span');
-                    var listPlot = new Image();
-                    listPlot.classList.add("list-plot");
-                    listPlot.src = searchResult.Poster;
-                    listPlot.width = "100";
-                    listPlot.height = "100";
+                    var listPoster = new Image();
+                    listPoster.classList.add("list-poster");
+                    listPoster.src = searchResult.Poster;
+                    listPoster.width = "100";
+                    listPoster.height = "100";
 
 
                     var favSpan = document.createElement('span');
@@ -51,6 +51,7 @@ function searchResults(searchString) {
                     var favIcon = document.createElement('i');
                     favIcon.classList.add("fa-solid");
                     favIcon.classList.add("fa-heart");
+                    favIcon.classList.add("heart-icon");
 
                     if(movieExists(searchResult.imdbID)){
                         favIcon.style.setProperty('color', "red");
@@ -63,7 +64,7 @@ function searchResults(searchString) {
         
                     favIcon.setAttribute('id', `favButtonHome-${searchResult.imdbID}`);
                     
-                    imgSpan.appendChild(listPlot);
+                    imgSpan.appendChild(listPoster);
                     favSpan.appendChild(favIcon);
                     listTitle.appendChild(yearSpan);
                     listTitlePlot.appendChild(imgSpan);
@@ -81,6 +82,7 @@ function searchResults(searchString) {
                         //searchString=sear;
                         addToFavList(searchResult.imdbID, "home");
                         favIcon.style.setProperty('color', "red");
+                        
 
                     });
 
@@ -125,10 +127,10 @@ function getRecentMovies(movieName) {
                                     <button id="movie-list-heart">`
                                     if(movieExists(movie.imdbID)){    
                                     
-                                        movies += `<i class="fa-solid fa-heart " title="Added to favorites" id="favButtonHome-${movie.imdbID}" onclick="addToFavList('${movie.imdbID}', 'home')" style="color: red"> </i></button>`}
+                                        movies += `<i class="fa-solid fa-heart heart-icon " title="Added to favorites" id="favButtonHome-${movie.imdbID}" onclick="addToFavList('${movie.imdbID}', 'home')" style="color: red"> </i></button>`}
 
                                         else{
-                                            movies +=`<i class="fa-solid fa-heart " title="Add to favorites" id="favButtonHome-${movie.imdbID}" onclick="addToFavList('${movie.imdbID}', 'home')" > </i></button>`
+                                            movies +=`<i class="fa-solid fa-heart heart-icon" title="Add to favorites" id="favButtonHome-${movie.imdbID}" onclick="addToFavList('${movie.imdbID}', 'home')" > </i></button>`
                                         }
                                         movies+=`</span>
 
@@ -136,7 +138,7 @@ function getRecentMovies(movieName) {
                                 </div>
                                </div>`
                 });
-                document.getElementById('recent-movie-list').innerHTML = movies;
+                document.getElementById('recent-movies-list').innerHTML = movies;
             }
         });
 }

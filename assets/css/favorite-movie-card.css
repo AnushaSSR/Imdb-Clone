@@ -1,11 +1,20 @@
+/*styling on the main and body*/
 main{
     background-color:rgba(20, 18, 25, 0.8);
     border: 3px solid gold;
 }
+body {
+    overflow-x: hidden;
+    background: rgba(20, 18, 25, 0.8) !important;
+}
 
+/*navigation menu styling*/
 .nav-item {
     margin-left: 80px;   
 }
+
+/*Styling to doisplay favorite movies*/
+/*list containetr*/
 
 
 .fav-list {
@@ -14,53 +23,61 @@ main{
     justify-content: space-evenly;
 }
 
+
 .fav-list-item {
-    border: 2px solid black;
+    border: 2px solid goldenrod;
     margin:50px;
 }
-
-
+/*list span*/
 .fav-list-item-span{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
-
-
+/*Ratings and awards*/
 .ratings{
+    margin: 10px;
     display: flex;
     flex-direction: column;
-
 }
-
-
-
-
 .ratings-value,.awards {
-    color: black;
-    font-weight: bold;
+    color: white;
 }
-
-
 .key {
     font-weight: bold;
     font-size: 1.2rem;
 }
-
 .font-style{
     font-family: monospace;
-
 }
-
 .btn-style {
-    border: 3% solid black;
+    border: 1px solid yellow;
     background-color: black;
-    color: yellow;
+    color: gold;
     border-radius: 5%;
-    cursor: pointer;
-
 }
 
+/*Movie details*/
+/*if the list is empty*/
+.empty-list-hr {
+    color: yellow;
+}
 
+.empty-list{
+    color: white;
+    text-align: center;
+}
+.home-link{
+    color: yellow;
+    text-decoration: none;
+}
+
+.home-link:hover{
+    color: white;
+    
+}
+
+/*if favorites exists*/
 .movie-details {
     display: flex;
     justify-content: space-between;
@@ -71,19 +88,14 @@ main{
     display: flex;
     flex-direction: column;
 }
+/*Movie title, poster plot and other details*/
 .movie-title {
     font-weight: bolder;
     color: goldenrod;
-
 }
-
-
 .plot {
     color: palegoldenrod;
 }
-
-
-
 .crew {
     color: white;
     display: flex;
@@ -91,42 +103,27 @@ main{
     justify-content: space-around;
 }
 
-
-
+/*Button to remove movie from favorites list*/
 .remove-item-button {
-    border: 3% solid yellow;
+    border: 2px solid gold;
     background-color: red;
-    color: yellow;
+    color: gold;
     border-radius: 6%;
-    
 }
 
+/*miscalenous for setting the view*/
 h1{
     color: whitesmoke;
     margin: 2%;
 }
-
 ul {
     list-style: none;
 }
-
-
 img {
     margin: 10px;
 }
 
-/* 
 
-
-#recent-movie-container {
-
-    display: flex;
-    background-color:rgba(20, 18, 25, 0.8);
-    flex-direction: column;
-    color: whitesmoke;
-    border: 1px solid gold;
-    
-} */
 
 
 

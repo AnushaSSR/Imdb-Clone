@@ -1,17 +1,21 @@
-/* body */
+/* body styling */
+body {
+    overflow-x: hidden;
+}
+
+/*styling for the main tag */
 main {
-    background-color:rgba(20, 18, 25, 0.8);
+    background-color: rgba(20, 18, 25, 0.8);
     border: 3px solid gold;
-
 }
 
-
-
-/* navigation */
-
+/* Styling for the navigation bar */
+/*sets the navigation item margin*/
 .nav-item {
-    margin-left: 80px;   
+    margin-left: 80px;
 }
+
+/*sets the properties of the search movies form input */
 
 #form-input {
     background-color: white;
@@ -20,7 +24,7 @@ main {
     border: 2px black solid;
 }
 
-
+/*sets the properties of the btn to get the search input, hover effect */
 
 .btn-hover {
     background-color: gold;
@@ -28,32 +32,48 @@ main {
     transition-duration: 0.4s;
     cursor: pointer;
 }
+
 .btn-hover:hover {
     background-color: gold;
 }
 
-
-#btn-icon{
+/*search button icon*/
+#btn-icon {
     color: black;
-
 }
 
-/* search list */
+.btn-style {
+    border: 1px solid yellow;
+    background-color: black;
+    color: gold;
+}
+
+/* form input styling */
+.d-flex {
+    width: 35%;
+}
+
+#form-input {
+    margin-left: 20%;
+}
+
+
+/*Styling for the search list*/
+
+/*Unordered Search list for search results*/
 #search-list {
-    
-    background-color:black;
-    color:white;
-    padding:0;
-    left:36%;
+    background-color: black;
+    color: white;
+    padding: 0;
+    left: 60%;
     position: absolute;
     z-index: 999;
     top: 72%;
     list-style: none;
     width: 36%;
-    
 }
 
-
+/*values of the list and effect on the list items */
 .list-val {
     display: flex;
     justify-content: space-between;
@@ -61,34 +81,23 @@ main {
     margin: 2px;
 }
 
-
 .list-val:hover {
     transform: scale(1.02);
-   box-shadow: 10px 10px 10px rgba(246, 48, 4, 0.5);
-   z-index: 10;
- }
+    box-shadow: 10px 10px 10px rgba(246, 48, 4, 0.5);
+    z-index: 10;
+}
+/*setting properties for the various element in the list*/
 
- .fav-span {
-
-    margin:50px;}
-    
-.set-span{
+.set-span {
     margin: 10px;
     display: flex;
     width: 70%;
 }
 
-
-
-.list-plot {
+/*list values title, poster and year styling*/
+.list-poster {
     margin-right: 10%;
 }
-
-
-/* .set-span img {
-    width: 125px;
-} */
-
 
 .list-title {
     font-weight: bold;
@@ -102,26 +111,36 @@ main {
     display: block;
     font-weight: 100;
     color: gold;
+}
 
+
+/*Add to favourite button styliong*/
+.fav-span {
+    margin: 50px;
+}
+
+.heart-icon {
+    color: white;
 
 }
 
-/* recent movies */
+/* .set-span img {
+    width: 125px;
+} */
 
-#recent-movie-container {
-border: 5px solid black;
-margin: 2%;
+/* Styling to display the Recent movies */
+#recent-movies-container {
+    border: 5px solid black;
+    margin: 2%;
 }
-.title{    
+
+.title {
     margin: 1% 4% 1% 4%;
-    color:white;
+    color: white;
     font-family: monospace;
-
-
 }
 
-
-#recent-movie-list {
+#recent-movies-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -129,29 +148,30 @@ margin: 2%;
     margin: 2% 3% 0% 3%;
 }
 
-.card-container{
+/*Movie card styling*/
+.card-container {
     background: black;
     text-align: center;
     margin: 2% 1% 3% 1%;
-    }
+}
 
-    .movie-card {
-        text-align: center;
-        margin-bottom: 15%;
-        border: 2px solid black;
-        background-color: black;
-    }
-    
+.movie-card {
+    text-align: center;
+    margin-bottom: 15%;
+    border: 2px solid black;
+    background-color: black;
+}
 
-    .card-content {
-        margin: 15px;
-    
-    }
+.card-content {
+    margin: 15px;
 
-    .card-title{
-        color: azure;
-    }
-  
+}
+
+.card-title {
+    color: azure;
+}
+
+/*Add to favourite button styliong*/
 #movie-fav-span {
     text-align: center;
 }
@@ -160,29 +180,72 @@ margin: 2%;
     background-color: black;
 }
 
+.home-movie-poster:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 10px rgba(246, 48, 4, 0.5);
+    z-index: 10;
+}
 
-/* chcek these  not in use*/
+
+/*medai aqueries for the 992px and 600 px widths */
+@media screen and (max-width:992px) {
+    #search-list {
+        left: 26%;
+        top: 96%;
+        width: 46%;
+    }
+
+
+    .d-flex {
+        margin-left: 20%;
+        width: 60%;
+    }
+
+
+
+    .fav-span {
+        margin: 50px;
+    }
+
+    #form-input {
+        margin-left: 0;
+    }
+
+}
+
+
+
+@media screen and ((max-width:600px)) {
+    #search-list {
+        left: 26%;
+        top: 96%;
+        width: 46%;
+    }
+
+
+    .d-flex {
+        margin-left: 20%;
+        width: 60%;
+    }
+
+
+
+    .fav-span {
+        margin: 50px 20px 50px 20px;
+    }
+
+    #form-input {
+        margin-left: 0;
+    }
+}
+
+
+/*miscalleneous styles to set the page view */
 .width {
     width: 200%;
 }
 
-/* .key {
-    color: gold;
-    font-weight: bold;
-} */
- 
-i {
-    color: white;
-    
-} 
 
-.bold{
+.bold {
     font-weight: bold;
 }
-
-
-
-@media screen and (max-width:992px) {
-    
-}
-

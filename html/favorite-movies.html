@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Header -->
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IMDB CLONE : Your favorites movies list</title>
+        <!-- scripts and links for styling -->
         <script src="https://kit.fontawesome.com/d1d222bc45.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../assets/css/favorite-movie-card.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- local styling file -->
+        <link rel="stylesheet" href="../assets/css/favorite-movie-card.css">
     </head>
+    <!-- Header -->
+    <!-- Body: Page Content -->
     <body>
+        <!-- Header -->
         <header>
+            <!-- Navbar container -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Navigation menu -->
                 <div class="container-fluid">
+                    <!-- Logo -->
                     <a class="navbar-brand" href="home.html">
                         <img
                             src="../assets/images/IMDB_Logo.svg"
@@ -24,6 +33,8 @@
                             logo
                         >
                     </a>
+                    <!-- Logo -->
+                    <!-- Toggler button -->
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -35,11 +46,17 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <!-- Toggler button -->
+                    <!-- Nav Bar collapsible -->
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <!-- Nav Bar list-->
                         <ul class="navbar-nav">
+                            <!-- Nav Menu : HOME -->
                             <li class="nav-item">
                                 <a class="nav-link" href="home.html">Home</a>
                             </li>
+                            <!-- Nav Menu : HOME -->
+                            <!-- Nav menu : DROPDOWN Recent-->
                             <li class="nav-item dropdown">
                                 <a
                                     class="nav-link dropdown-toggle"
@@ -48,35 +65,97 @@
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Trending
+                                    Recent
                                 </a>
+                                <!-- Dropdown Menu -->
+                                <!-- Dropdown item: Movies -->
+                                <!-- Dropdown item: Seriess -->
                                 <ul class="dropdown-menu">
+                                    <!-- Dropdown item: Movies -->
                                     <li>
-                                        <a class="dropdown-item" href="#">Movies</a>
+                                        <a class="dropdown-item" href="#recent-movies-container">Movies</a>
                                     </li>
+                                    <!-- Dropdown item: Seriess -->
                                     <li>
-                                        <a class="dropdown-item" href="#">Series</a>
+                                        <a class="dropdown-item" href="#recent-series-container">Series</a>
                                     </li>
+                                    <!-- Dropdown item: Seriess -->
                                 </ul>
                             </li>
+                            <!-- Nav menu : DROPDOWN-->
+                            <!-- Nav menu : My Favorites -->
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">My Favorites</a>
                             </li>
+                            <!-- Nav menu : My Favorites -->
+                            <!-- Nav item: Contact Us -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contact us</a>
                             </li>
+                            <!-- Nav item: Contact Us -->
                         </ul>
+                        <!-- Nav Bar list-->
                     </div>
+                    <!-- Nav Bar collapsible -->
                 </div>
+                <!-- Navigation menu -->
             </nav>
+            <!-- Navbar container -->
         </header>
+        <!-- Main to display the Fvaorite movie list -->
         <main>
             <div id="fav-list-container">
-            <h1> Favourite Movies List</h1>
-            <ul id="fav-list"></ul>
-        </div>
+                <h1> Favourite Movies List</h1>
+                <ul id="fav-list"></ul>
+            </div>
         </main>
-            </body>
-            <!-- <script src="../assets/js/load-api.js"></script> -->
-            <script src="../assets/js/favorite-movies.js"></script>
-        </html>
+        <!-- Main to display the Fvaorite movie list -->
+        <!-- Footer Section -->
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-facebook-f">
+                        </i
+                >
+                    </a>
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-twitter">
+                        </i
+                >
+                    </a>
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-google">
+                        </i
+                >
+                    </a>
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-linkedin-in">
+                        </i
+                >
+                    </a>
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-github">
+                        </i
+                >
+                    </a>
+                </section>
+            </div>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.8);">
+                © 2022 Copyright: All Rights Reserved
+            </div>
+        </footer>
+        <!-- Footer -->
+        <!-- Scripts -->
+        <script src="../assets/js/favorite-movies.js"></script>
+        <!-- Scripts -->
+    </body>
+    <!-- Body: Page Content -->
+</html>

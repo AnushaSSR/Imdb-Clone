@@ -45,7 +45,7 @@ function setFavList(movieInfo) {
 
 function movieExists(movieID) {
     let index = favMovieList.filter(movielist => {
-        return movielist.imdbID === movieID;
+        return movielist.imdbID == movieID;
     });
 
     if (index.length != 0) {
@@ -92,23 +92,25 @@ function removeFromList(movieID) {
 
 }
 function displayFavListMain(favlist) {
-
     let favList = "";
 
+
+    if(favlist.length !=0){
+    
     favlist.forEach(get);
     function get(movieDetails) {
-        console.log(movieDetails);
         favList +=
             `<li class="fav-list-item">
             <span class="fav-list-item-span">
                 <span class="ratings">
+            
                     <span class="movie-ratings font-style">
                         <span class="awards key">Awards<span>
-                        <span class="key"><button class="btn-style awards"> ${movieDetails.Awards}</button></span>
+                        <span class="key"><button class="btn-style awards" disabled> ${movieDetails.Awards}</button></span>
                     </span>  
                     <span class="rating-details font-style">
-                        <span class="ratings-value key">Imbdb Ratings<span>
-                        <span class="key"><button class="btn-style rating"><i class="fa-solid fa-star"></i> ${movieDetails.imdbRating}</button></span>
+                        <span class="ratings-value key">Imdb Ratings<span>
+                        <span class="key"><button class="btn-style rating" disabled><i class="fa-solid fa-star"></i> ${movieDetails.imdbRating}</button></span>
                     </span>   
                     
                 </span>
@@ -121,21 +123,31 @@ function displayFavListMain(favlist) {
                         <h2 class="movie-title font-style">${movieDetails.Title}</h2>
 
                         <span class="plot-span plot"> ${movieDetails.Plot}</span>
-                        <hr>
+                        
                         <span class="crew">
                         <span class="actors-span key">Actors: ${movieDetails.Actors}</span>
                         <span class="director-span key"> Director: ${movieDetails.Director}</span> 
                         <span class="release-span key">Runtime: ${movieDetails.Runtime}</span>
                         <span>
                     </span>
+                    
                 </div>
 
-                <div>
+                <hr>
+
+                <div style="    text-align: center">
                     <button class="remove-item-button" onclick="removeFromList('${movieDetails.imdbID}')"> Remove from favourites </button>
                 </div>
             </span>
             
             </li>`
+        }
+    } else {
+        favList = `<hr class="empty-list-hr"> <h4 class="empty-list">No favorites added.<a href="home.html" class="home-link"> Click here</a> to continue to home </h4><hr class="empty-list-hr>`
+    }
+
+    
+    if(document.getElementById('fav-list') !=null) {
         document.getElementById('fav-list').innerHTML = favList;
     }
 

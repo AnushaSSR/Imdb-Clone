@@ -1,113 +1,82 @@
+/*stylling to control the overflow in x direction*/
 body {
-            
-
+    overflow-x: hidden;
 }
 
-    main {
-        border: 3px solid gold;
-    
-    }
-/* /navigation bar */
-    .nav-item {
-        margin-left: 80px;   
-    }
+/*main element*/
+main {
+    border: 3px solid gold;
+}
 
-    /* movie details */
+/* navigation bar */
+.nav-item {
+    margin-left: 80px;
+}
+
+/* Display the movie details */
 #movie-details-container {
     display: flex;
-    background-color:rgba(20, 18, 25, 0.8);
+    background-color: rgba(20, 18, 25, 0.8);
     flex-direction: column;
     color: whitesmoke;
     border: 1px solid gold;
-    
-}
-/* hr {
-    margin: 0;
-    color: darkgoldenrod;
-}.col-12 {
-    color: goldenrod;
-} */
-
-
-.movie-plot {
-    margin: 0% 2% 0% 5%;
-    font-size: 1.5rem;
 }
 
-
-.movie-details {
-    width:100%;
-    display: inline-flex;
-    margin:6%;
-}
-
-.movie-data{
-    display: flex;
-    flex-direction: column;
-    margin-left: 10%;
-    width: 40%;
-
-}
-
+/*styling for plot, deatails like year ratings*/
 
 .btn-style {
     border: 3% solid black;
     background-color: black;
     color: yellow;
     border-radius: 5%;
-    cursor: pointer;
-
+    cursor: none;
 }
 
-
+.movie-title {
+    margin: 0% 2% 0% 2%;
+    font-variant: small-caps;
+    font-weight: bolder;
+    color: goldenrod;
+}
+.movie-plot {
+    color: palegoldenrod;
+    font-size: large;
+    margin: 0% 2% 0% 5%;
+    font-size: 1.5rem;
+}
+.movie-details {
+    width: 100%;
+    display: inline-flex;
+    margin: 6%;
+}
+.movie-data {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    width: 40%;
+}
 .fa-star {
     color: goldenrod;
 }
 
-#favSpan {
-    text-align: left;
-}
-
-#favButton {
-    background-color: gold;}
-    
-
-/* .rating {
-    background-color: black;
-    color: yellow;
-
-} */
-/* #voteVal {
-    margin: 0;
-} */
 
 
-.movie-title {
-    margin: 0% 2% 0% 2%;
+/*Add to favorites button styling*/
 
-    font-variant: small-caps ;
-    font-weight: bolder;
-    color: goldenrod;
-}
-
-.movie-plot {
-    color: palegoldenrod;
-    font-size:large;
-}
-
-
-#favIcon {
-    color: red;
-}
-
-
-#fav{
+#fav {
     background-color: gold;
     display: flex;
     justify-content: center;
 }
-
-
+#favSpan {
+    text-align: left;
+}
+#favButton {
+    background-color: gold;
+}
+#favIcon {
+    color: red;
+}
 .hr {
-    color:rgba(20, 18, 25, 0);
+    color: rgba(20, 18, 25, 0);
 }

@@ -12,9 +12,13 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
+        <!-- Header -->
         <header>
+            <!-- Navbar container -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Navigation menu -->
                 <div class="container-fluid">
+                    <!-- Logo -->
                     <a class="navbar-brand" href="home.html">
                         <img
                             src="../assets/images/IMDB_Logo.svg"
@@ -24,6 +28,8 @@
                             logo
                         >
                     </a>
+                    <!-- Logo -->
+                    <!-- Toggler button -->
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -35,11 +41,17 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <!-- Toggler button -->
+                    <!-- Nav Bar collapsible -->
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <!-- Nav Bar list-->
                         <ul class="navbar-nav">
-                            <li class="nav-item ">
-                                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                            <!-- Nav Menu : HOME -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.html">Home</a>
                             </li>
+                            <!-- Nav Menu : HOME -->
+                            <!-- Nav menu : DROPDOWN Recent-->
                             <li class="nav-item dropdown">
                                 <a
                                     class="nav-link dropdown-toggle"
@@ -48,58 +60,149 @@
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Trending
+                                    Recent
                                 </a>
+                                <!-- Dropdown Menu -->
                                 <ul class="dropdown-menu">
+                                    <!-- Dropdown item: Movies -->
                                     <li>
-                                        <a class="dropdown-item" href="#">Movies</a>
-                                    </li>
+                                        <a class="dropdown-item" href="#recent-movies-container">Movies</a>
+                                    </li>   
+                                     <!-- Dropdown item: Movies -->
+                                    
+                                    <!-- Dropdown item: Seriess -->
                                     <li>
-                                        <a class="dropdown-item" href="#">Series</a>
+                                        <a class="dropdown-item" href="#recent-series-container">Series</a>
                                     </li>
+                                    <!-- Dropdown item: Seriess -->
                                 </ul>
                             </li>
+                            <!-- Nav menu : DROPDOWN-->
+                            <!-- Nav menu : My Favorites -->
                             <li class="nav-item">
                                 <a class="nav-link" href="favorite-movies.html">My Favorites</a>
                             </li>
+                            <!-- Nav menu : My Favorites -->
+                            <!-- Nav item: Contact Us -->
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contact us</a>
                             </li>
-                            <form class="d-flex" role="search">
-                                <input
-                                    class="form-control me-2"
-                                    type="search"
-                                    placeholder="Type here to search"
-                                    aria-label="Search"
-                                    onkeyup="searchResults(this.value)"
-                                    id="form-input"
-                                    hidden="true"
-                                >
-                                <button class="btn-hover" type="submit" onmousedown="getSearchInput()">
-                                    <i class="fa-solid fa-magnifying-glass-plus" id="btn-icon"></i>
-                                </button>
-                            </form>
+                            <!-- Nav item: Contact Us -->
                         </ul>
+                        <!-- Nav Bar list-->
+                        <!-- Form: Enter the movie name to search -->
+                        <form class="d-flex" role="search">
+                            <!-- Input: Type the movie name to search -->
+                            <input
+                                class="form-control me-2"
+                                type="search"
+                                placeholder="Type here to search"
+                                aria-label="Search"
+                                onkeyup="searchResults(this.value)"
+                                id="form-input"
+                                hidden="true"
+                            >
+                            <!-- Input: Type the movie name to search -->
+                            <!-- Button : Search button -->
+                            <button
+                                class="btn-hover"
+                                id="search-btn"
+                                type="submit"
+                                onmousedown="getSearchInput()"
+                                title="click to get the search input"
+                            >
+                                <i class="fa-solid fa-magnifying-glass-plus" id="btn-icon"></i>
+                            </button>
+                            <!-- Button : Search button -->
+                        </form>
+                        <!-- Form: Enter the movie name to search -->
                     </div>
+                    <!-- Nav Bar collapsible -->
                 </div>
-                <!-- list to add the search elements -->
-                    <ul id="search-list"></ul>
+                <!-- Navigation menu -->
+                <ul id="search-list"></ul>
             </nav>
+            <!-- Navbar container -->
         </header>
+        <!-- Header -->
+        <!-- list to add the search elements -->
+        <!-- Main to display the recent movies -->
         <main>
-            <section id="recent-movie-container">
+            <!-- Section: Recent movies -->
+            <section id="recent-movies-container">
                 <h1 class="title">Recent Movies</h1>
-                <div id="recent-movie-list">
+                <div id="recent-movies-list">
                     hard coded:recent-movie-container
                 </div>
             </section>
+            <!-- Section: Recent movies -->
+            <!-- Section: Recent series -->
+            <section id="recent-series-container">
+                <h1 class="title">Recent Series : Loading....</h1>
+                <div id="recent-seriss-list">
+                   
+                </div>
+            </section>
+            <!-- Section: Recent series -->
         </main>
-    </body>
+        <!-- Main: Display recent content -->
+        <!-- Footer Section -->
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-facebook-f">
+                        </i
+                >
+                    </a>
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-twitter">
+                        </i
+                >
+                    </a>
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-google">
+                        </i
+                >
+                    </a>
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-linkedin-in">
+                        </i
+                >
+                    </a>
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                        <i class="fab fa-github">
+                        </i
+                >
+                    </a>
+                </section>
+            </div>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.8);">
+                © 2022 Copyright: All Rights Reserved
+            </div>
+        </footer>
+        <!-- Footer -->
+
+        <!-- Scripts -->
     <script src="../assets/js/home.js"></script>
     <script src="../assets/js/favorite-movies.js"></script>
+    <!-- Script to get the search input on clicking on button -->
     <script>
     function getSearchInput(){      
         document.getElementById('form-input').removeAttribute("hidden");
+        document.getElementById('search-btn').setAttribute('title','Click to close the search input');
     }
     </script>
+    <!-- Script to get the search input on clicking on button -->
+    <!-- Scripts -->
+    </body>
+    <!-- Body: Display Content -->
+    
 </html>
