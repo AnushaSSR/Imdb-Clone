@@ -1,6 +1,6 @@
 Add link ************************* 
 # Imdb-Clone
-*This is IMDB Clone where user can search about the movies and know the details about the movie.
+* This is IMDB Clone where user can search about the movies and know the details about the movie.
 * Built with decent interface using Vanilla javascript, CSS, HTML and Bootstrap.
 
 # Features
