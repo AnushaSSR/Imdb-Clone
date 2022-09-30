@@ -1,4 +1,3 @@
-Add link ************************* 
 # Imdb-Clone
 * This is IMDB Clone where user can search about the movies and know the details about the movie.
 * Built with decent interface using Vanilla javascript, CSS, HTML and Bootstrap.
@@ -10,6 +9,9 @@ Add link *************************
 5. My favorites page displays the list of favorites movies added by a user.
 6. User can remove a movie from favorites from the my favorites page.
 
+# Glimpse of the app
+# ![ImdbClone](https://user-images.githubusercontent.com/108065688/193318348-beccc3a0-b3c2-4c03-8681-ead38a05da65.gif)
 
 
-<a href="https://www.google.com/" target="_blank">Click here</a> to see the product.
+
+# <a href="https://anushassr.github.io/Imdb-Clone/" target="_blank">Click here</a> to see the product.
