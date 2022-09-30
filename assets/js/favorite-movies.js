@@ -17,7 +17,7 @@ function addToFavList(movieID, page) {
     if (index.length == 0) {
         //methods call to set the properties of the buttons
         setProperties(movieID, page);
-        fetch(`http://www.omdbapi.com/?apikey=677792fa&i=${movieID}`)
+        fetch(`https://www.omdbapi.com/?apikey=677792fa&i=${movieID}`)
             .then((response) => response.json())
             .then((data) => {
                 //method call to set the movie id into the list 
