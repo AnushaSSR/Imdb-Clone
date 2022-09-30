@@ -11,7 +11,7 @@ getRecentMovies(titleValues[valueIndex]);
 //Method to display the search results in the list, autosuggestions upon typing (appears after 3 letters)
 function searchResults(searchString) {
 
-    fetch(`http://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${searchString}`)
+    fetch(`https://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
             var searchList = document.getElementById('search-list');
@@ -100,7 +100,7 @@ function searchResults(searchString) {
 //Method to display recent movies on home screen by passing random string
 
 function getRecentMovies(movieName) {
-    fetch(`http://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${movieName}&year=2022`)
+    fetch(`https://www.omdbapi.com/?apikey=${apikey}&type=movie&s=${movieName}&year=2022`)
         .then((response) => response.json())
         .then((data) => {
             let movies = "";

@@ -13,7 +13,7 @@ movieDetails();
 
 //method to fetch the details when user clicked on a movie by ID
 function movieDetails() {
-    fetch(`http://www.omdbapi.com/?apikey=${apikey}&i=${searchString}`)
+    fetch(`https://www.omdbapi.com/?apikey=${apikey}&i=${searchString}`)
         .then((response) => response.json())
         .then((data) => {
             //add details to the search list
