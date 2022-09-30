@@ -73,7 +73,7 @@ function searchResults(searchString) {
                     // on click event listener to pass the url, fetch and display the movie details
                     listTitlePlot.addEventListener("click", function () {
                         searchString = searchResult.imdbID;
-                        window.location.href = 'movie-page.html?title=' + searchString;
+                        window.location.href = './html/movie-page.html?title=' + searchString;
                     });
 
                     // on click event listener to to add the movie to the favorites
@@ -108,7 +108,7 @@ function getRecentMovies(movieName) {
                 data.Search.forEach(movie => {
                     movies += `<div class="card-container" style="width:15rem;height:18rem">
                                 <div class="movie-card" style="width:15rem;height:90%">
-                                    <a class="movie-link" href = 'movie-page.html?title= ${movie.imdbID}'>
+                                    <a class="movie-link" href = './html/movie-page.html?title=${movie.imdbID}'>
                                         <img src="${movie.Poster}" alt=" " width="200px" height="200px" onclick="movieDetails()" class="home-movie-poster">
                                     </a>
                                     <div class="movie-card-body">
